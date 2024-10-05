@@ -1,18 +1,20 @@
 const mongoose = require('mongoose')
+
 const QuizSchema = new mongoose.Schema({
-    "quizzes": [
+    quizzes: [
         {
             title: String,
             icon: String,
             questions: [
                 {
                     question: String,
-                    options: Array,
+                    options: [String],
                     answer: String
                 }
             ]
         }
     ]
+   
 })
 
 const Quiz = mongoose.model("quiz", QuizSchema)
